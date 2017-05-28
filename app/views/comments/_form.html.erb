@@ -1,0 +1,14 @@
+<%= form_for([@article, @article.comments.build]) do |f| %>
+  <form>
+    <div class="form-group">
+      <label>Commenter</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" name="comment[commenter]" placeholder="Enter title">
+    </div>
+    <div class="form-group">
+      <label for="exampleTextarea">Text</label>
+      <textarea class="form-control" id="exampleTextarea" name="comment[body]" rows="3"></textarea>
+    </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  <% end %>

@@ -1,20 +1,21 @@
 <h1>Listing articles</h1>
 
-<%= link_to 'New article', new_article_path %>
-<table>
+<button type="button" class="btn btn-info"><%= link_to 'New article', new_article_path %></button>
+
+<table class="table">
   <tr>
-    <th>Title</th>
-    <th>Text</th>
+    <th scope="row">Title</th>
+    <th scope="row">Text</th>
     <th colspan="3"></th>
   </tr>
 
   <% @articles.each do |article| %>
   <tr>
-    <td><%= article.title %></td>
-    <td><%= article.text %></td>
-    <td><%= link_to 'Show', article_path(article) %></td>
-    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td><%= link_to 'Destroy', article_path(article),
+    <td class="panel-body transparent"><%= article.title %></td>
+    <td class="panel-body transparent"><%= article.text %></td>
+    <td class="panel-body transparent"><%= link_to 'Show', article_path(article) %></td>
+    <td class="panel-body transparent"><%= link_to 'Edit', edit_article_path(article) %></td>
+    <td class="panel-body transparent"><%= link_to 'Destroy', article_path(article),
             method: :delete,
             data: { confirm: 'Are you sure?'} %></td>
   </tr>
