@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-    @article = Article.all
+    @articles = Article.all
   end
 
   def show
@@ -8,12 +8,36 @@ class ArticlesController < ApplicationController
   end
 
   def new
+    @article = Article.new
   end
 
+  def edit
+    @article = Article.find_by(id: params[:id])
+  end
+  
   def create
     @article = Article.new(article_params)
-    @article.save
-    redirect_to @article
+
+    if @article.save
+      redirect_to @article
+    else
+      render 'new'
+    end
+  end
+
+  def update
+    @article = Article.find_by(id: params[:id])
+
+    if @article.save
+      redirect_to @article
+    else
+      render 'new'
+    end
+  end
+
+  def destroy
+    @article = Article.find_by(id: params[:id])
+    @article.destroy
   end
 
   private
