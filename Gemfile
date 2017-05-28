@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap', '4.0.0.alpha3'
 gem 'friendly_id', '~> 5.1.0'
-gem "react-rails"
+
 gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
 gem 'coffee-script'
 gem 'autoprefixer-rails'
